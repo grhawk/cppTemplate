@@ -4,9 +4,9 @@ jobs:
     docker:
       - image: ubuntu:bionic
     steps:
-      - run: apt-get update && apt-get install -y cmake
+      - run: apt-get update && apt-get install -y cmake git
       - checkout
-      - run: mkdir build && cd build
+      - run: cd cppTemplate && mkdir build && cd build
       - run: cmake ..
       - run: make
       - run: make test
