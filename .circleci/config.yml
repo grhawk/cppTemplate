@@ -10,10 +10,10 @@ jobs:
       - run: apt-get update && apt-get install -y cmake git build-essential
       - checkout
       - run: ls; ls ~/project
-      - run: cd ~/project && mkdir build && cd build
-      - run: cmake ..
-      - run: make
-      - run: make test
+      - run: cd ~/project && mkdir build
+      - run: cd ~/project/build && cmake ..
+      - run: cd ~/project/build && make
+      - run: cd ~/project/build && make test
 
 workflows:
   version: 2
