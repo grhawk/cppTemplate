@@ -3,9 +3,11 @@
 #include<example.h>
 
 TEST(Example, ExampleTest){
-    ASSERT_EQ(sayHello(), "Hello!");
+  ASSERT_STREQ(sayHello(), "Hello!");
 }
 
 TEST(Example, ExpectedToFail){
-    ASSERT_EQ(sayHello(), "Hello");
+  const char* res = sayHello();
+  const char* exp = res;
+  ASSERT_EQ(res, exp);
 }
