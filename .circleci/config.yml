@@ -6,7 +6,8 @@ jobs:
     steps:
       - run: apt-get update && apt-get install -y cmake git
       - checkout
-      - run: cd cppTemplate && mkdir build && cd build
+      - run: ls; ls ~/project
+      - run: cd ~/project && mkdir build && cd build
       - run: cmake ..
       - run: make
       - run: make test
