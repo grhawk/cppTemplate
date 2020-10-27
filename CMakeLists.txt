@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(example VERSION 0.1.0)
+
+set(PROJECT example1)
+
+project(${PROJECT} VERSION 0.1.0)
 
 enable_testing()
 include(GoogleTest)

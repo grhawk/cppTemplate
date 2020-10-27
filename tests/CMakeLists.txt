@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(example-tests VERSION 0.1.0)
+
+# Set the name of the parent project followed by `-tests`
+project(${PROJECT_NAME}-tests VERSION 0.1.0)
 
 configure_file(${CMAKE_SOURCE_DIR}/tests/gtest.cmake googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
@@ -29,7 +31,7 @@ endif()
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 
-add_executable(example-tests test1.cpp)
-target_link_libraries(example-tests gtest_main example)
+add_executable(${PROJECT_NAME} test1.cpp)
+target_link_libraries(${PROJECT_NAME} gtest_main example)
 
-gtest_discover_tests(example-tests)
+gtest_discover_tests(${PROJECT_NAME})
